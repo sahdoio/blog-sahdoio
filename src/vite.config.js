@@ -11,7 +11,7 @@ export default defineConfig({
     server: {
         host: 'sahdo.io',
         hmr: {
-            host: '0.0.0.0'
+            host: 'sahdo.io'
         },
     },
     build: {
