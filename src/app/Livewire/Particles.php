@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class Coming extends Component
+class Particles extends Component
 {
     public function render()
     {
-        return view('livewire.coming');
+        return view('livewire.particles');
     }
 }

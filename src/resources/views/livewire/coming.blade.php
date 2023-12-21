@@ -1,4 +1,5 @@
 <x-app-layout>
+    <livewire:particles/>
     <div class="wrapper">
         <div class="logo-wrapper">
             <img src="{{ asset('images/logo.png') }}" alt="SahdoIO"/>
