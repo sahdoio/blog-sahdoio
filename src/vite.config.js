@@ -9,9 +9,9 @@ export default defineConfig({
         })
     ],
     server: {
-        host: 'sahdo.io',
+        host: '0.0.0.0',
         hmr: {
-            host: 'sahdo.io'
+            host: 'localhost'
         },
     },
     build: {
