@@ -1,8 +1,10 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 
 body {
-    background: #00091B;
     color: #fff;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left, #000000 0%, #261d02 100%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #000000 0%, #261d02 100%) repeat scroll 0 0;
+    position: relative;
 }
 
 @keyframes fadeIn {
@@ -28,28 +30,36 @@ body {
 }
 
 .wrapper {
-    position: absolute;
-    left: 50%;
-    top: 35%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    animation: fadeIn 1000ms ease;
-    -webkit-animation: fadeIn 1000ms ease;
+    width: 100%;
+    padding: 5px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
 .logo-wrapper {
+    max-width: 400px;
+    width: 100%;
+    padding: 10px 20px;
     margin: 0 auto;
     display: block;
     text-align: center;
 }
 
+.logo-wrapper img {
+    width: 100%;
+}
+
 .description {
+    margin: 0 auto;
+    width: 100%;
+    display: block;
     max-width: 550px;
     text-align: center;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Poppins', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
@@ -95,5 +105,4 @@ p {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     text-decoration: none;
-
 }
