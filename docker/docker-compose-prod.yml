@@ -9,7 +9,7 @@ services:
     container_name: sahdoio-nginx
     image: nginx
     ports:
-      - '80:80'
+      - '8000:80'
     depends_on:
       - sahdoio
     volumes:

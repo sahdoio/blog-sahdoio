@@ -14,9 +14,9 @@
         </div>
         <br>
         <div class="icons">
-            <a href="https://www.linkedin.com/in/lucassahdo"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://twitter.com/lucassahdo"><i class="fa-brands fa-twitter"></i></a>
             <a href="https://www.instagram.com/lucassahdo"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://twitter.com/lucassahdo"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/lucassahdo"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </div>
 </x-app-layout>
