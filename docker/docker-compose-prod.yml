@@ -9,7 +9,7 @@ services:
     container_name: sahdoio-nginx
     image: nginx
     ports:
-      - '8000:80'
+      - '80:80'
     depends_on:
       - sahdoio
     volumes:
@@ -31,21 +31,6 @@ services:
     networks:
       - sahdoio-network
 
-  sahdoio-mysql:
-    container_name: sahdoio-mysql
-    image: mysql:8.0
-    ports:
-      - '3306:3306'
-    volumes:
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=hintify
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=secret
-    networks:
-      - sahdoio-network
-
   sahdoio-nodejs:
     container_name: sahdoio-nodejs
     image: node:18
@@ -56,5 +41,6 @@ services:
     working_dir: /var/www
     networks:
       - sahdoio-network
-    command: sh -c "npm run dev"
+    command: sh -c "tail -f /dev/null"
+
 

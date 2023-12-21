@@ -47,8 +47,6 @@ RUN docker-php-ext-install \
    xsl \
    opcache
 
-RUN pecl install mongodb && docker-php-ext-enable mongodb
-
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 ENV LC_ALL pt_BR.UTF-8
