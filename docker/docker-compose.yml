@@ -47,13 +47,26 @@ services:
       - sahdoio-network
 
   sahdoio-mongo:
-      container_name: sahdoio-mongo
-      image: mongo
-      ports:
-          - 27017:27017
-      volumes:
-          - ../src:/var/www
-      logging:
-          driver: none
-      networks:
+    container_name: sahdoio-mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ../src:/var/www
+    logging:
+      driver: none
+    networks:
       - sahdoio-network
+
+  sahdoio-nodejs:
+    container_name: sahdoio-nodejs
+    image: node:18
+    ports:
+      - 5173:5173
+    volumes:
+      - ../src:/var/www
+    working_dir: /var/www
+    networks:
+      - sahdoio-network
+    command: sh -c "npm run dev"
+
