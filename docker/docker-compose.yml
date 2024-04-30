@@ -1,3 +1,5 @@
+version: '3'
+
 networks:
   sahdoio-network:
     driver: bridge
@@ -9,7 +11,7 @@ services:
     container_name: sahdoio-nginx
     image: nginx
     ports:
-      - '8000:80'
+      - '8080:80'
     depends_on:
       - sahdoio
     volumes:
@@ -22,7 +24,7 @@ services:
     container_name: sahdoio
     build:
       context: ./
-      dockerfile: ./api.Dockerfile
+      dockerfile: ./app.Dockerfile
     image: sahdoio
     ports:
       - '9000:9000'
@@ -31,29 +33,15 @@ services:
     networks:
       - sahdoio-network
 
-  sahdoio-mysql:
-    container_name: sahdoio-mysql
-    image: mysql:8.0
+  sahdoio-nodejs:
+    container_name: sahdoio-nodejs
+    build:
+      context: ./
+      dockerfile: ./nodejs.Dockerfile
+    image: sahdoio/nodejs
     ports:
-      - '3306:3306'
+      - '5173:5173'
     volumes:
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=hintify
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=secret
+      - ../src:/var/www
     networks:
-      - sahdoio-network
-
-  sahdoio-mongo:
-      container_name: sahdoio-mongo
-      image: mongo
-      ports:
-          - 27017:27017
-      volumes:
-          - ../src:/var/www
-      logging:
-          driver: none
-      networks:
       - sahdoio-network
